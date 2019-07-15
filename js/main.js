@@ -1,16 +1,17 @@
+console.log('test 1:29');
 window.addEventListener('scroll', function(event) {
   let logo = document.getElementById('logo');
   let button = document.getElementById('button');
   let nav = document.getElementById('nav');
   let lines = this.document.getElementsByClassName('lines');
   if (window.scrollY > button.offsetTop + button.offsetHeight) {
-    logo.src = '../assets/logo-color.svg';
+    logo.src = '../../assets/logo-color.svg';
     nav.style.backgroundColor = 'rgba(255, 255, 255, 1)';
     lines[0].style.backgroundColor = 'rgb(137,1,89)';
     lines[1].style.backgroundColor = 'rgb(85,99,90)';
     lines[2].style.backgroundColor = 'rgb(137,1,89)';
   } else {
-    logo.src = '../assets/logo-white.svg';
+    logo.src = '../../assets/logo-white.svg';
     nav.style.backgroundColor = 'transparent';
     lines[0].style.backgroundColor = 'white';
     lines[1].style.backgroundColor = 'white';
