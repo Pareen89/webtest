@@ -1,7 +1,7 @@
 .shop {
   height: 60rem;
   &__right {
-    @include bgImg('/assets/banner-1.jpg', rgba(0, 0, 0, 0.75));
+    @include bgImg('../assets/banner-1.jpg', rgba(0, 0, 0, 0.75));
     grid-column: 1/3;
   }
 }
