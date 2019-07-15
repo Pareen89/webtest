@@ -1,4 +1,4 @@
-console.log('test 1:29');
+console.log('test 1:42');
 window.addEventListener('scroll', function(event) {
   let logo = document.getElementById('logo');
   let button = document.getElementById('button');
