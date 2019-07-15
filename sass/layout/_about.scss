@@ -1,6 +1,6 @@
 .about {
   height: 52.6rem;
   &__right {
-    @include bgImg('/assets/img-1.jpg', rgba(255, 255, 255, 0.85));
+    @include bgImg('../assets/img-1.jpg', rgba(255, 255, 255, 0.85));
   }
 }
