@@ -1,0 +1,165 @@
+.header {
+  background-image: url('../assets/hero.jpg');
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //background-attachment: fixed;
+  z-index: -1;
+  user-select: none;
+  overflow: hidden;
+}
+// Navagation Section
+.nav {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  padding: 0 10rem;
+  align-items: center;
+  z-index: 2;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  position: fixed;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  @include respond(tab-port) {
+    padding: 7rem;
+  }
+  @include respond(phone) {
+    height: 10vh;
+    padding: 5rem;
+  }
+  &__logo {
+    width: 20%;
+    &-img {
+      transition: all 0.5s;
+    }
+
+    @include respond(tab-land) {
+      width: 33%;
+    }
+    @include respond(phone) {
+      width: 50%;
+    }
+  }
+  &__menu {
+    cursor: pointer;
+    &-line {
+      display: block;
+      height: 0.2rem;
+      width: 4rem;
+      background-color: $header_font_color;
+      margin: 1rem auto;
+      transition: all 0.3s ease-in-out;
+    }
+    &.active .nav__menu-line:nth-child(2) {
+      opacity: 0;
+    }
+    &.active .nav__menu-line:nth-child(1) {
+      transform: translateY(1.2rem) rotate(45deg);
+    }
+    &.active .nav__menu-line:nth-child(3) {
+      transform: translateY(-1.2rem) rotate(-45deg);
+    }
+  }
+}
+// Introduction Section
+.intro {
+  user-select: none;
+  color: white;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    line-height: 1;
+    @include respond(phone) {
+      line-height: 1.25;
+    }
+    // First Block of Text for Introduction
+    &-primary {
+      display: block;
+      font-size: 7.2rem;
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke-color: white;
+      -webkit-text-stroke-width: 0.3rem;
+      white-space: nowrap;
+      text-transform: uppercase;
+      animation: moveInLeft 1s;
+      @include respond(phone) {
+        font-size: 6.8rem;
+      }
+    }
+    // Second Block of Text fir Introduction
+    &-secondary {
+      display: block;
+      font-size: 6.5rem;
+      font-weight: 700;
+      color: white;
+      text-transform: capitalize;
+      letter-spacing: 0.5rem;
+      animation: moveInRight 1s;
+      @include respond(phone) {
+        font-size: 5rem;
+      }
+    }
+  }
+  // Intro Button
+  &__button {
+    margin-top: 2.5rem;
+    animation: moveInUp 1s;
+    @include respond(phone) {
+      margin-top: 4rem;
+    }
+  }
+}
+
+// Animations
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  80% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

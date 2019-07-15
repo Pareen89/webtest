@@ -1,0 +1,41 @@
+.reviews {
+  height: 50rem;
+  overflow: hidden;
+
+  @include respond(tab-port) {
+    height: 70rem;
+    text-align: center;
+  }
+
+  i {
+    font-size: 3rem;
+    color: #ff7218;
+    user-select: none;
+  }
+}
+.footer {
+  height: 15rem;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  p {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+  }
+  ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+  }
+  li {
+    padding: 0 2rem;
+  }
+  img {
+    width: 5rem;
+    filter: invert(51%) sepia(10%) saturate(3891%) hue-rotate(236deg)
+      brightness(89%) contrast(82%);
+  }
+}

@@ -1,0 +1,7 @@
+.products {
+  height: 60rem;
+  &__left {
+    @include bgImg('/assets/banner-2.jpg', rgba(0, 0, 0, 0.75));
+    grid-column: 1/3;
+  }
+}

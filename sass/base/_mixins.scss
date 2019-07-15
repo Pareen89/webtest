@@ -1,0 +1,53 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+
+    //600px
+  }
+
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+
+    // 900px
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+
+    //1200px
+  }
+  @if $breakpoint==big-screen {
+    @media only screen and (min-width: 120em) and (max-width: 200em) {
+      @content;
+    }
+
+    //1900px
+  }
+  @if $breakpoint==bigger-screen {
+    @media only screen and (min-width: 200em) {
+      @content;
+    }
+
+    //1900px
+  }
+}
+
+// Background Images for sections
+@mixin bgImg($image, $rgba) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url($image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  z-index: -1;
+  @include respond(tab-port) {
+    background-image: linear-gradient($rgba, $rgba), url($image);
+  }
+}

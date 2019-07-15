@@ -1,0 +1,141 @@
+.services {
+  height: 100%;
+  display: grid;
+  &__left {
+    @include respond(tab-port) {
+      height: 40rem;
+      text-align: center;
+    }
+  }
+  &__right {
+    background-color: #fafafa;
+    @include respond(tab-port) {
+    }
+  }
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  &:hover &__text {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  &:hover img {
+    transform: scale(0.8);
+    filter: blur(3px) brightness(0%);
+  }
+  &:hover .icon {
+    background-color: $primary_text_color;
+  }
+
+  .icon {
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    img {
+      transform: scale(1);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: capitalize;
+    transition: all 0.5s ease-in-out;
+  }
+  @include respond(tab-port) {
+    padding: 5rem;
+    justify-self: center;
+  }
+}
+.item-1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: start;
+
+  &__text {
+    transform: translate(-50%, 80%);
+    opacity: 0;
+  }
+}
+.item-2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: end;
+  &__text {
+    transform: translate(-50%, -180%);
+    opacity: 0;
+  }
+}
+.item-3 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: start;
+  &__text {
+    transform: translate(80%, 80%);
+    opacity: 0;
+  }
+}
+.item-4 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: end;
+  &__text {
+    transform: translate(-180%, -180%);
+    opacity: 0;
+  }
+}
+.item-1,
+.item-2,
+.item-3,
+.item-4 {
+  @include respond(tab-port) {
+    justify-self: center;
+    margin: 0;
+  }
+}
+.item-1,
+.item-2 {
+  margin: 10rem 0 2.5rem 0;
+}
+.item-3,
+.item-4 {
+  margin: 2.5rem 0 10rem 0;
+}
+.icon {
+  border-radius: 50rem;
+  width: 15rem;
+  height: 15rem;
+  border: 0.2rem solid $primary_text_color;
+  transition: all 0.2s ease-in-out;
+  display: grid;
+  @include respond(tab-port) {
+    width: 20rem;
+    height: 20rem;
+    @include respond(phone) {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+  img {
+    justify-self: center;
+    align-self: center;
+    width: 70%;
+  }
+  &__title {
+    padding-top: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+.white {
+  color: #fff !important;
+}

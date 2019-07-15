@@ -1,0 +1,64 @@
+// Container One // seperates section into two equal parts
+.container__one {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  overflow-x: hidden;
+  &-left {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 0rem 5rem 0rem 20rem;
+    @include respond(tab-land) {
+      padding: 5rem;
+    }
+  }
+  &-right {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 0rem 20rem 0rem 5rem;
+    @include respond(tab-land) {
+      padding: 5rem;
+    }
+  }
+}
+.container__two {
+  display: grid;
+  grid-column: 1fr 1fr;
+  grid-row: 1fr 1fr;
+  height: 100%;
+  align-items: center;
+}
+// Container one responsive combined view
+.c1-m1 {
+  overflow-x: hidden;
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+  }
+  &-l,
+  &-r {
+    @include respond(tab-port) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+  }
+}
+
+// Container one responsive seperated view
+.c1-m2 {
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  &-l {
+    @include respond(tab-port) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+  }
+  &-r {
+    @include respond(tab-port) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+  }
+}
